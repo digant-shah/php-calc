@@ -24,6 +24,12 @@ class calculatorController extends Command {
           $this->console->line("<background:15><color:19>Output : {$sumArr} <reset>");
         }
         break;
+        
+      case 'add' :
+        $isValidateString = preg_replace('/[^,0-9\-]/', ',', $numString);
+        $sumArr = array_sum(explode(',', $numString));
+        $this->console->line("<background:15><color:19>Output : {$sumArr} <reset>");
+        break;  
 
       default;
     }
