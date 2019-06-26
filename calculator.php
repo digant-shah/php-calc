@@ -34,6 +34,12 @@ class calculatorController extends Command {
           $isValidateString = preg_replace('/[^,0-9\-]/', ',', $isValidateString);
           $sumArr = array_sum(explode(',', $isValidateString));
           $this->console->line("<background:15><color:19>Output : {$sumArr} <reset>");
+          break;
+
+        case 'multiply' :
+          $isValidateString = preg_replace('/[^,0-9\-]/', ',', $isValidateString);
+          $sumArr = array_product(array_filter(explode(',', $isValidateString)));
+          $this->console->line("<background:15><color:19>Output : {$sumArr} <reset>");
           break;  
 
         default;
