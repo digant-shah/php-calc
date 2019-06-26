@@ -48,14 +48,19 @@ class calculatorController extends Command {
    */
   public function isValidate($value) {
     $valArr = explode(',', $value);
-    
+
+    //ignore the numbers above 1000
+    $ignoreArr = array_filter($valArr, function ($x) {
+      return $x < 1000;
+    });
+
     //return only positive numbers
-    $posArr = array_filter($valArr, function ($y) {
+    $posArr = array_filter($ignoreArr, function ($y) {
       return $y >= 0;
     });
 
     //ignore the negative numbers and return positive numbers
-    $negArr = array_filter($valArr, function ($y) {
+    $negArr = array_filter($ignoreArr, function ($y) {
       return $y < 0;
     });
 
