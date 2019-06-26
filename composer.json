@@ -1,0 +1,16 @@
+{
+    "name": "root/php-calculator",
+    "description": "php calculator",
+    "license": "dev-mode",
+    "authors": [
+        {
+            "name": "Digant",
+            "email": "digant.shah91@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "tarsana/command": "^1.2",
+        "phpunit/phpunit": "^7.3"
+    }
+}
